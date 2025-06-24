@@ -24,10 +24,23 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { useEffect , useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-// Menu items.
+interface User {
+  name: string;
+  lastName: string;
+  role: string;
+  department?: {
+    name: string;
+  };
+   email: string;
+  password: string;
+  experience: string;
+  menteesCount: number;
+}
+
 const items = [
   {
     name: "",
@@ -77,8 +90,20 @@ const items = [
 ];
 
 export function AppSidebar() {
-  const pathname = usePathname(); // одоогийн path-ийг авна
-
+  const [userData, setUser] = useState<User | undefined>(undefined);
+  const pathname = usePathname(); 
+  useEffect(() => {
+    const userData = localStorage.getItem('currentUser');
+    if (userData) {
+      try {
+        const parsedUser = JSON.parse(userData) as User;
+        setUser(parsedUser);
+      } catch (error) {
+        console.error("Failed to parse user data:", error);
+      }
+    }
+  }, []);
+  console.log(userData , "user data")
   return (
     <Sidebar>
       <SidebarContent>
