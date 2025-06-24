@@ -122,13 +122,7 @@ export default function Component() {
             whileHover={{ y: -5, scale: 1.02 }}
           >
             <Card className="p-6 bg-blue-100/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-              <Image
-                src={"/placeholder.svg?height=300&width=487"}
-                width={487}
-                height={300}
-                alt="advice"
-                className="rounded-lg"
-              />
+              <Image src={"/placeholder.svg"} width={487} height={300} alt="advice"/>
               <div>
                 <h2 className="text-slate-700 font-semibold text-2xl leading-8 mt-4">Зөвлөгөө</h2>
                 <p className="text-slate-700 font-normal text-xl leading-7 mt-2">

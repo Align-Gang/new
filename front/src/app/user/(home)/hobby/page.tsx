@@ -27,7 +27,7 @@ export default function WishPage() {
 
   console.log(baseUrl, "base")
   return (
-    <div className="px-10 h-screen w-full ">
+    <div className="px-10 h-screen w-screen ">
       <div>
         <div className="text-center py-30">
           <h1 className="text-slate-800 text-3xl font-semibold">
